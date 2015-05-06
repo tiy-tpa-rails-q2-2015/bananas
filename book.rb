@@ -1,50 +1,18 @@
+
 class Book
+  PAPER_BACK = :pb
+  HARD_COVER = :hc
 
-  def initialize(new_title, text)
-    @title = new_title
+  attr_accessor :title # Read and Write
+  attr :type           # Read only
+
+  def initialize(title, text, type = HARD_COVER)
+    @title = title
     @text = text
-  end
-
-  def print_title
-    puts @title
+    @type = type
   end
 
   def read
-    puts @text
-  end
-
-  class Wine
-
-    def initialize(title, vintage)
-      @title = title
-      @vintage = vintage
-    end
-
-    def drink
-      puts "This #{@title} from #{@vintage} is lovely."
-    end
+    @text
   end
 end
-
-class AudioBook < Book
-
-  def read
-    super
-    %x(say '#{@text}')
-  end
-end
-
-atotc = Book.new("A Tale of Two Cities", "It was the best of times, it was the worst times...")
-atotc.print_title
-atotc.read
-
-harry_potter = Book.new("Harry Potter and the Sorcerer's Stone", "Lol, harry.")
-harry_potter.print_title
-harry_potter.read
-
-road = AudioBook.new("The Road", "My name is Cormmick McCartney, and I ride a Motorcycle, and apparently eat people.")
-road.print_title
-road.read
-
-# wine = Book::Wine.new("Merlot", 1965)
-# wine.drink
