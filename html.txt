@@ -1,0 +1,28 @@
+HTML = Hyper Text Markup Language
+|
+HTTP = Hyper Text Transfer Protocol
+
+
+
+
+SGML
+
+<Name>Jason Perry</Name>
+
+XML
+<Person>
+  <Name>Jason Perry</Name>
+  <Hometown>St Petersburg</Hometown>
+</Person>
+
+
+HTML
+
+<html>
+  <head>
+
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,49 @@
+/* Comments
+
+// Single line comments - referred to a "C style comments"
+
+# Or like this (in ruby).
+
+/*
+ *   Multi-line comment
+ *   Like this. This is the kind of comment
+ *   we use in CSS.
+ */
+
+
+/* Simplest types of selector are the tag selectors */
+
+body {
+  background-color: gray;
+  color: white;
+}
+
+li {
+  color: #00CC00;
+}
+
+/* Then we have descendant selectors  */
+
+ol li {
+  color: #CCCC00;
+}
+
+/* class and ID selectors */
+
+li.fruit {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.secondary {  /* class*/
+  font-style: italic;
+}
+
+#lists { /* id */
+
+  background-color: #333;
+  padding: 50px;
+  background-image: url('../netnow3.gif');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
