@@ -1,6 +1,6 @@
 class Car
   attr :make, :model
-  attr_accessor :color                       # <-------- #
+  # attr_accessor :color                     # <-------- #
                                                          #
   def initialize(make, model, color)                     #
     @make = make                                         #
@@ -21,6 +21,7 @@ class Car
   def color=(new_color)                                  #  `attr` is shorthand
     @color = new_color                                   #  for just the getter.
   end                                                    #
+end
 
 my_car = Car.new("VW", "Rabbit", "White")
 
