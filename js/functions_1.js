@@ -68,12 +68,14 @@ console.assert( largest(2, 4, 6, 8) === 8 )
 function longest(){
     // parse arguments into an array
     var args = [].slice.call(arguments);
-
-    // .. do something with each element of args
-    // YOUR CODE HERE
+    var l = "";
+    forEach(args, function(a){
+        if (a.length > l.length) { l = a; };
+    });
+    return l;
 }
 
-console.assert( longest(2, 4, 6, 8) === 5 )
+console.assert( longest("shelby", "boss", "mach1", "rousche") === "rousche" )
 
 // 5. write a function that can sort an array of Date objects (returns a NEW ARRAY of Date's)
 
