@@ -30,9 +30,9 @@ console.assert(total === 24);
 function sum(){
     // parse arguments into an array
     var args = [].slice.call(arguments);
-
-    // .. do something with each element of args
-    // YOUR CODE HERE
+    var total = 0; 
+    forEach(args, function(a){ total += a; });
+    return total;
 }
 
 console.assert( sum(1, 2, 3, 4, 5) === 15 )
