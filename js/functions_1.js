@@ -45,10 +45,6 @@ function average(){
     var total = 0;
     forEach(args, function(a){ total += a; });
     return total / args.length;
-
-
-    // .. do something with each element of args
-    // YOUR CODE HERE
 }
 
 console.assert( average(2, 4, 6, 8) === 5 )
@@ -58,12 +54,14 @@ console.assert( average(2, 4, 6, 8) === 5 )
 function largest(){
     // parse arguments into an array
     var args = [].slice.call(arguments);
-
-    // .. do something with each element of args
-    // YOUR CODE HERE
+    var l = 0;
+    forEach(args, function(a){
+        if (a > l) { l = a; };
+    });
+    return l;
 }
 
-console.assert( largest(2, 4, 6, 8) === 5 )
+console.assert( largest(2, 4, 6, 8) === 8 )
 
 // 4. find the longest string of the inputs (returns the longest input (A STRING))
 
