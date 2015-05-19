@@ -13,7 +13,9 @@
 // 0. write your own forEach() that takes two arguments: an array, and a callback
 
 function forEach(array, callback){
-    // YOUR CODE HERE
+    for (var i = 0; i < array.length; i++) {
+       callback(array[i]); 
+    };
 }
 
 // testing your code with console.assert
