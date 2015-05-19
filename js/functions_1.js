@@ -82,9 +82,9 @@ console.assert( longest("shelby", "boss", "mach1", "rousche") === "rousche" )
 function sort(){
     // parse arguments into an array
     var args = [].slice.call(arguments);
-
-    // .. do something with each element of args
-    // YOUR CODE HERE
+    return args.sort(function(a,b) {
+        return a > b; 
+    })
 }
 
 var dates = [
