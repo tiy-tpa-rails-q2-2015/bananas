@@ -96,7 +96,7 @@ console.assert(
     sorted[1] === dates[2] &&
     sorted[2] === dates[4] &&
     sorted[3] === dates[1] &&
-    sorted[4] === dates[0] &&
+    sorted[4] === dates[0]
 )
 
 /**
