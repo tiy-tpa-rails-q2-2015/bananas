@@ -42,6 +42,10 @@ console.assert( sum(1, 2, 3, 4, 5) === 15 )
 function average(){
     // parse arguments into an array
     var args = [].slice.call(arguments);
+    var total = 0;
+    forEach(args, function(a){ total += a; });
+    return total / args.length;
+
 
     // .. do something with each element of args
     // YOUR CODE HERE
