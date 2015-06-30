@@ -1,41 +1,29 @@
-# Make things that have a `display_name` printable.
+require 'active_support'
+
+# Make things that have `display_*` printable.
 module Displayable
-  def self.included(mod)
-    mod.include InstanceMethods
-    mod.extend ClassMethods
-  end
+  extend ActiveSupport::Concern
 
-  # Setup displayable attrs
-  module ClassMethods
-    def attr_displayable(*attrs)
-      # BEGIN HAND WAVEY
-      class_eval do
-        class << self
-          attr_accessor :displayable_attrs
-        end
+  included do
+    class << self
+      attr_accessor :displayable_attrs
+
+      def attr_displayable(*attrs)
+        @displayable_attrs = attrs
       end
-      # END HAND WAVEY
-
-      @displayable_attrs = attrs
     end
   end
 
-  # Make things that have a `display_name` printable.
-  module InstanceMethods
-    def display
-      line = '| '
-      columns = []
-      self.class.displayable_attrs.each do |attr|
-        columns << send("display_#{attr}").ljust(18)
-      end
-      line << columns.join(' | ')
-      line << ' |'
-      puts line
+  def display
+    columns = []
+    self.class.displayable_attrs.each do |attr|
+      columns << send("display_#{attr}").ljust(18)
     end
+    puts '| ' + columns.join(' | ') + ' |'
   end
 end
 
-# Out Item Class
+# $$$
 class Product
   include Displayable
 
@@ -75,6 +63,7 @@ class Service
   end
 end
 
+# An edible
 class Fruit
   include Displayable
 
@@ -94,6 +83,7 @@ class Fruit
   end
 end
 
+# A Readable
 class Book
   include Displayable
 
@@ -117,6 +107,3 @@ items << Fruit.new('Apple', 'Red')
 items << Book.new("Ender's Game", 'Orson Scott Card')
 
 items.each(&:display)
-
-# | Sponge       | $1.25 |
-# | Soap         | $0.75 |
